@@ -10,5 +10,5 @@ TODO feature added List
 
 - CompressionStartPage (String location)  :page for showing compression status and calling Calling StartCompression class[shubham]
 
-- StartCompression () :class for which does actual compression[1.gunvant,2.shubham]
+- StartCompression (String location) :class for which does actual compression[1.gunvant,2.shubham]
 
