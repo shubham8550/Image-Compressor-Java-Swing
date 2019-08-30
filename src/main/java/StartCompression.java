@@ -25,7 +25,7 @@ public class StartCompression extends Thread {
             File input = new File(location);
             BufferedImage image = ImageIO.read(input);
 
-            File compressedImageFile = new File("compressed_image.jpg");
+            File compressedImageFile = new File(FilenameUtils.getFullPath(location)+FilenameUtils.getBaseName(location)+"_Compressed."+FilenameUtils.getExtension(location));
             OutputStream os = new FileOutputStream(compressedImageFile);
 
             progressBar.setValue(20);
