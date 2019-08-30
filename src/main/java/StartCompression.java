@@ -55,7 +55,7 @@ public class StartCompression extends Thread {
 
             progressBar.setValue(100);
             frame.setVisible(false);
-            new CompressionSuccessfullPage();
+            new CompressionSuccessfulPage();
             frame.dispose();
 
         }catch (Exception e){
