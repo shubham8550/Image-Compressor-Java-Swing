@@ -3,7 +3,8 @@
 ### TODO feature added List
 - (StartCompression.java)Compression module [done]
 - CompressionStartPage.java [done]
-- CompressionSuccessfulPage
+- HomePage [undone]
+- CompressionSuccessfulPage [undone]
 
 
 ## Class-With-its-details
