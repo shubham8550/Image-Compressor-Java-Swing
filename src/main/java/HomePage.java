@@ -16,13 +16,21 @@ public class HomePage extends JFrame {
     private JLabel uploadLabel;
     private JLabel imageLabel;
     private JPanel centerPanel;
+    private JLabel extLabel;
+    private JLabel sizeLabel;
+    private JLabel nameLabel;
     private String filePath = "";
 
-    public HomePage() throws HeadlessException {
+    public HomePage() throws HeadlessException
+    {
         add(UploadPanel);
         setVisible(true);
         setTitle("SP Image Compressor");
         setSize(450, 450);
+
+        extLabel.setText("    -");
+        sizeLabel.setText("-");
+        nameLabel.setText("-");
 
         selectLabel.addMouseListener(new MouseAdapter() {
             @Override
@@ -86,6 +94,9 @@ public class HomePage extends JFrame {
         if(returnVal == JFileChooser.APPROVE_OPTION)
         {
             filePath = fc.getSelectedFile().getAbsolutePath();
+            extLabel.setText("    "+getFileExtension(new File(filePath)));
+            sizeLabel.setText((new File(filePath).length())/1000 + "KB");
+            nameLabel.setText((new File(filePath).getName()).replaceFirst("[.][^.]+$",""));
             return 0;
         }
         else
@@ -94,6 +105,12 @@ public class HomePage extends JFrame {
         }
 
     }
-
+    private static String getFileExtension(File file)
+    {
+        String fileName = file.getName();
+        if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+            return fileName.substring(fileName.lastIndexOf(".") + 1);
+        else return "";
+    }
 
 }

@@ -10,7 +10,7 @@ import javax.swing.*;
 public class StartCompression extends Thread {
     JProgressBar progressBar;
     JFrame frame;
-    String location;
+    String location,myPath;
 
     StartCompression(JFrame frame,JProgressBar progressBar,String location) {
         this.frame=frame;
@@ -25,7 +25,20 @@ public class StartCompression extends Thread {
             File input = new File(location);
             BufferedImage image = ImageIO.read(input);
 
-            File compressedImageFile = new File(FilenameUtils.getFullPath(location)+FilenameUtils.getBaseName(location)+"_Compressed."+FilenameUtils.getExtension(location));
+            JFrame parentFrame = new JFrame();
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Specify a file to save");
+
+            int userSelection = fileChooser.showSaveDialog(parentFrame);
+
+            if (userSelection == JFileChooser.APPROVE_OPTION)
+            {
+                File fileToSave = fileChooser.getSelectedFile();
+                myPath = fileToSave.getAbsolutePath();
+            }
+
+            File compressedImageFile = new File(FilenameUtils.getFullPath(myPath)+FilenameUtils.getBaseName(myPath)+"_Compressed."+FilenameUtils.getExtension(location));
             OutputStream os = new FileOutputStream(compressedImageFile);
 
             progressBar.setValue(20);

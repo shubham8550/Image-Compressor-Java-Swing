@@ -72,7 +72,7 @@
                   <font/>
                 </border>
                 <children>
-                  <component id="9d489" class="javax.swing.JLabel">
+                  <component id="9d489" class="javax.swing.JLabel" binding="extLabel">
                     <constraints border-constraint="Center"/>
                     <properties>
                       <font size="20" style="1"/>
@@ -90,7 +90,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="52e7f" class="javax.swing.JLabel">
+                  <component id="52e7f" class="javax.swing.JLabel" binding="sizeLabel">
                     <constraints border-constraint="Center"/>
                     <properties>
                       <font size="20" style="1"/>
@@ -108,7 +108,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="6f841" class="javax.swing.JLabel">
+                  <component id="6f841" class="javax.swing.JLabel" binding="nameLabel">
                     <constraints border-constraint="Center"/>
                     <properties>
                       <font size="20" style="1"/>
@@ -167,7 +167,7 @@
                       <font size="20" style="1"/>
                       <horizontalAlignment value="2"/>
                       <horizontalTextPosition value="2"/>
-                      <text value="Size"/>
+                      <text value="       Size"/>
                     </properties>
                   </component>
                 </children>
